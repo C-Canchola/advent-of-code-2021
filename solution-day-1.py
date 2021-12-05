@@ -9,4 +9,5 @@ def get_diff_iter():
             cur = int(l)
             yield cur - prev
 
-print(len([diff for diff in get_diff_iter() if diff > 0]))
+if __name__ == '__main__':
+    print(len([diff for diff in get_diff_iter() if diff > 0]))
