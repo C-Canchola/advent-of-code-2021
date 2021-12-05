@@ -10,19 +10,12 @@ def _get_counts(rows:List[str]):
 def _get_used_count_bit(cur_count:List[int], use_highest:bool):
     
     if cur_count[1] > cur_count[0]:
-        if use_highest:
-            return 1
-        return 0
+        return int(use_highest)
     
     if cur_count[0] > cur_count[1]:
-        if use_highest:
-            return 0
-        return 1
+        return int(not use_highest)
     
-    if use_highest:
-        return 1
-
-    return 0
+    return int(use_highest)
     
 def _scrub_recurse(filtered_rows:List[str], idx:int, use_highest:bool):
     if len(filtered_rows) == 1:
@@ -77,7 +70,7 @@ if __name__ == '__main__':
     converter = Converter(row_iter('ex-day-3.txt'))
     print(converter.power_consumption)
     print(converter.life_support_rating)
-    
+
     converter = Converter(row_iter('input-day-3.txt'))
     print(converter.power_consumption)
     print(converter.life_support_rating)
