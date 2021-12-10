@@ -33,7 +33,7 @@ def get_nums(file_name:str):
 def get_child_count_for_day_1_fish(days:int):
     if days < 2:
         return 0
-    return 1 + get_child_count_for_day_1_fish(days - 7) + get_child_count_for_day_1_fish(days - (7 + 2))
+    return 1 + get_child_count_for_day_1_fish(days - 7) + get_child_count_for_day_1_fish(days - (7 + 2)) # 1 for new child + direct child in 7 days + grand child in 9 days
 
 @functools.lru_cache()
 def get_count_for_day_1_fish(days:int):
@@ -63,5 +63,3 @@ def solution_2():
 if __name__ == '__main__':
     print(solution_1())
     print(solution_2())
-    # for i in range(1, 20):
-    #     print(i, get_count_for_fish(i, 2))
