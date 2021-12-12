@@ -143,9 +143,6 @@ class OctupusMap:
         while self._first_simultaneous_flash_round == 0:
             self.advance()
             
-        
-
-
 
 EX = 'ex-day-11.txt'
 IN = 'input-day-11.txt'
